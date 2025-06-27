@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Enquiry Form | Skyvex IT Solutions</title>
+        <style>
+    body {
+      background: linear-gradient(135deg, #caf0f8 0%, #90e0ef 40%, #0077b6 100%);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .enquiry-form-container {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 6px 32px #0077b633, 0 1.5px 0 #caf0f8 inset;
+      max-width: 440px;
+      width: 100%;
+      padding: 2.7rem 2.2rem 2rem;
+      text-align: left;
+      position: relative;
+    }
+    .enquiry-form-container::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -36px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px;
+      height: 72px;
+      aspect-ratio: 1 / 1;
+      background: url('SKYVEX.png') no-repeat center/cover, linear-gradient(135deg, #caf0f8 60%, #48cae4 100%);
+      border-radius: 50%;
+      box-shadow: 0 2px 12px #90e0ef55;
+    }
+    .enquiry-form-container h2 {
+      margin-top: 0;
+      color: #0077b6;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .enquiry-form-container label {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: #03045e;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .enquiry-form-container input,
+    .enquiry-form-container textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.2rem;
+      border: 1.5px solid #48cae4;
+      border-radius: 0.6rem;
+      font-size: 1.05rem;
+      font-family: inherit;
+      background: #f8fafc;
+      color: #03045e;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      resize: vertical;
+      box-shadow: 0 1px 4px #caf0f822 inset;
+    }
+    .enquiry-form-container input:focus,
+    .enquiry-form-container textarea:focus {
+      border-color: #0077b6;
+      outline: none;
+      box-shadow: 0 0 0 2px #90e0ef55;
+    }
+    .enquiry-form-container button {
+      background: linear-gradient(90deg, #0077b6 60%, #0096c7 100%);
+      color: #fff;
+      border: none;
+      border-radius: 0.6rem;
+      padding: 0.9rem 2.7rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #0077b622;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: block;
+      margin: 0 auto;
+      letter-spacing: 0.2px;
+    }
+    .enquiry-form-container button:hover {
+      background: linear-gradient(90deg, #0096c7 60%, #0077b6 100%);
+      transform: scale(1.045);
+      box-shadow: 0 4px 16px #0077b644;
+    }
+    .enquiry-success {
+      display: none;
+      color: #0077b6;
+      margin-top: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="enquiry-form-container">
+            <h2>Enquiry Form</h2>
+            <form id="enquiry-form" autocomplete="off">
+                <label for="enquiry-name">Full Name</label>
+                <input type="text" id="enquiry-name" name="name" required
+                    placeholder="Your Name" />
+                <label for="enquiry-email">Email Address</label>
+                <input type="email" id="enquiry-email" name="email" required
+                    placeholder="you@email.com" />
+                <label for="enquiry-phone">Phone Number</label>
+                <input type="tel" id="enquiry-phone" name="phone"
+                    pattern="[0-9\-\+\s]{7,}" placeholder="Optional" />
+                <label for="enquiry-message">Message</label>
+                <textarea id="enquiry-message" name="message" rows="4" required
+                    placeholder="How can we help you?"></textarea>
+                <button type="submit">Send Enquiry</button>
+            </form>
+            <div class="enquiry-success" id="enquiry-success">Thank you for your
+                enquiry! Our team will get back to you soon.</div>
+        </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('enquiry-form');
+      if(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          form.style.display = 'none';
+          document.getElementById('enquiry-success').style.display = 'block';
+        });
+      }
+    });
+  </script>
+    </body>
+</html>

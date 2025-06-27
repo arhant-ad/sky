@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skyvex IT Solutions Portfolio</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --color-bg: #f4f8fb;
+      --color-header: #003366;
+      --color-accent: #0077b6;
+      --color-accent-light: #e0f2ff;
+      --color-card-bg: #fff;
+      --color-footer-bg: #003366;
+      --color-footer-text: #fff;
+      --color-text-primary: #003366;
+      --color-text-secondary: #444e5e;
+      --color-shadow: rgba(0, 119, 182, 0.08);
+      --border-radius: 0.85rem;
+      --max-width: 1200px;
+      --gap: 2.2rem;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 18px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--color-header);
+      color: #fff;
+      box-shadow: 0 2px 12px var(--color-shadow);
+      border-bottom: 3px solid var(--color-accent);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #00336633;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      border-radius: 0.5rem;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .nav-links a:hover, .nav-links a:focus {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    main {
+      background: var(--color-bg);
+      padding-top: 4.5rem;
+      padding-bottom: 5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(120deg, #e0f2ff 0%, #f4f8fb 100%);
+      color: var(--color-header);
+      text-align: center;
+      padding: 4.5rem 1.5rem 5rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px 0 var(--color-shadow);
+      margin: 2.5rem auto 3.5rem;
+      max-width: 900px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      color: var(--color-header);
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 0.9rem 2.8rem;
+      border-radius: 2rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px var(--color-shadow);
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background: #005b8a;
+      transform: scale(1.04);
+      outline: none;
+    }
+
+    /* Section styles */
+    section {
+      margin-bottom: 3.5rem;
+      padding: 1.5rem 0.5rem 0.5rem;
+      background: none;
+    }
+
+    section h2 {
+      color: var(--color-header);
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    section p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Add subtle section divider lines for a more professional look */
+    section:not(:first-child) {
+      border-top: 1.5px solid #e0e7ef;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+    }
+
+    /* Cards grid for Core Services and Industry Focus */
+    .grid {
+      display: grid;
+      gap: var(--gap);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Core Services: 2 columns on desktop, 1 column on mobile */
+    .cards-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+
+    .card {
+      background: var(--color-card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 10px var(--color-shadow);
+      padding: 2.2rem 2rem 2rem;
+      color: var(--color-header);
+      font-weight: 600;
+      font-size: 1.08rem;
+      text-align: center;
+      transition: box-shadow var(--transition), transform var(--transition);
+      border: 1.5px solid #e0f2ff;
+    }
+
+    /* Add icons to cards for visual interest */
+    .card::before {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1.1rem auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .card:nth-child(1)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/code.svg'); }
+    .card:nth-child(2)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/smartphone.svg'); }
+    .card:nth-child(3)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/share-2.svg'); }
+    .card:nth-child(4)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/cloud.svg'); }
+    .card:nth-child(5)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/bar-chart-2.svg'); }
+    .card:nth-child(6)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/cpu.svg'); }
+    .card:nth-child(7)::before { background-image: url('https://cdn.jsdelivr.net/gh/feathericons/feather/icons/users.svg'); }
+
+    .card:hover {
+      box-shadow: 0 8px 32px #0077b61a;
+      transform: translateY(-4px) scale(1.03);
+      border-color: var(--color-accent);
+    }
+
+    /* Leadership Spotlight - block style */
+    .leadership {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      background: var(--color-accent-light);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 10px var(--color-shadow);
+      padding: 2.2rem 2rem;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Leadership avatar for a more professional touch */
+    .leadership::before {
+      content: '';
+      display: block;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: url('https://randomuser.me/api/portraits/women/44.jpg') center/cover no-repeat, #fff;
+      box-shadow: 0 2px 10px var(--color-shadow);
+      margin-right: 2.2rem;
+    }
+
+    .leadership {
+      position: relative;
+      padding-left: 0;
+    }
+    .leadership strong {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .leadership p {
+      color: var(--color-text-secondary);
+      font-size: 1.08rem;
+      margin: 0;
+    }
+
+    /* Quote style for Closing Thought */
+    .quote {
+      background: var(--color-accent-light);
+      color: var(--color-header);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 2.2rem 1.2rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 8px var(--color-shadow);
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+    }
+
+    footer {
+      background: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      text-align: center;
+      padding: 2.5rem 1rem 1.2rem;
+      font-size: 1.08rem;
+      letter-spacing: 0.5px;
+      margin-top: 3rem;
+      border-top: 3px solid var(--color-accent);
+    }
+
+    /* Footer social icons */
+    footer .footer-social {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    footer .footer-social a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+    footer .footer-social a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInNav {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes cardPop {
+      0% { transform: scale(0.95) rotate(-2deg); opacity: 0; }
+      60% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    @keyframes navUnderline {
+      from { width: 0; left: 50%; }
+      to { width: 100%; left: 0; }
+    }
+    @keyframes btnGlow {
+      0% { box-shadow: 0 0 0 0 rgba(99,102,241,0.5); }
+      70% { box-shadow: 0 0 16px 8px rgba(99,102,241,0.15); }
+      100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.0); }
+    }
+
+    /* Apply fade-in to hero and sections */
+    .hero, section, .leadership, .quote {
+      opacity: 0;
+      animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    .hero { animation-delay: 0.1s; }
+    section { animation-delay: 0.3s; }
+    .leadership { animation-delay: 0.5s; }
+    .quote { animation-delay: 0.7s; }
+
+    /* Animate nav links */
+    .nav-links a {
+      opacity: 0;
+      animation: slideInNav 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    .nav-links a:nth-child(1) { animation-delay: 0.2s; }
+    .nav-links a:nth-child(2) { animation-delay: 0.3s; }
+    .nav-links a:nth-child(3) { animation-delay: 0.4s; }
+    .nav-links a:nth-child(4) { animation-delay: 0.5s; }
+    .nav-links a:nth-child(5) { animation-delay: 0.6s; }
+    .nav-links a:nth-child(6) { animation-delay: 0.7s; }
+
+    /* Animate cards in industry/unique lists */
+    ul.grid.cards-2 > li {
+      opacity: 0;
+      transform: translateY(30px) scale(0.97);
+      animation: cardPop 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    ul.grid.cards-2 > li:nth-child(1) { animation-delay: 0.2s; }
+    ul.grid.cards-2 > li:nth-child(2) { animation-delay: 0.3s; }
+    ul.grid.cards-2 > li:nth-child(3) { animation-delay: 0.4s; }
+    ul.grid.cards-2 > li:nth-child(4) { animation-delay: 0.5s; }
+    ul.grid.cards-2 > li:nth-child(5) { animation-delay: 0.6s; }
+    ul.grid.cards-2 > li:nth-child(6) { animation-delay: 0.7s; }
+
+    /* Ensure animations only play once on load */
+    body.loaded .hero,
+    body.loaded section,
+    body.loaded .leadership,
+    body.loaded .quote,
+    body.loaded .nav-links a {
+      opacity: 1;
+    }
+    /* Ensure cards and lists visible after load */
+    body.loaded .card,
+    body.loaded ul.grid.cards-2 > li {
+      opacity: 1;
+    }
+
+    /* Responsive text adjustments */
+    @media (max-width: 800px) {
+      .leadership, .hero, .quote {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem;
+      }
+      .grid.cards-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .leadership strong, section h2 {
+        font-size: 1.1rem;
+      }
+      .btn-primary {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+    <script>
+      // Add 'loaded' class to body after DOM is ready to trigger animations
+      window.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav aria-label="Primary navigation">
+          <div class="logo" tabindex="0">Skyvex IT Solutions</div>
+          <div class="nav-links" role="navigation"
+            aria-label="Main navigation">
+            <a href="#overview">Overview</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="#culture">Culture</a>
+            <a href="#unique">Unique</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Hero section introduction">
+        <h1>Empowering Global Innovation<br />from Bangalore to the
+          USA</h1>
+        <p>Skyvex IT Solutions is a dynamic technology firm specializing
+          in tailored IT and technical solutions for US clients.</p>
+        <button class="btn-primary" type="button"
+          aria-label="Get started with Skyvex IT Solutions">Get
+          Started</button>
+      </section>
+
+      <section id="overview" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Company Overview</h2>
+        <p>Skyvex IT Solutions, headquartered in Bangalore, India,
+          provides high-quality IT services focused on innovation,
+          reliability, and scalability. We support startups and
+          mid-sized companies with customized digital transformation
+          strategies.</p>
+      </section>
+
+      <section id="leadership" aria-labelledby="leadership-heading">
+        <h2 id="leadership-heading">Leadership Spotlight</h2>
+        <article class="leadership" tabindex="0">
+          <strong>Ms. Richhi Pradeep Bajpai</strong>
+          <p>Founder and CEO of Skyvex IT Solutions. A visionary and
+            forward-thinking leader recognized for empowering young
+            professionals and women in tech, and fostering
+            cross-border collaboration through innovative
+            leadership.</p>
+        </article>
+      </section>
+
+      <section id="services" aria-labelledby="services-heading">
+        <h2 id="services-heading">Core Services</h2>
+        <div class="grid cards-2" role="list"
+          aria-label="Core services offered">
+          <div class="card" role="listitem">Custom Software
+            Development</div>
+          <div class="card" role="listitem">Web & Mobile App
+            Development</div>
+          <div class="card" role="listitem">Enterprise Application
+            Integration</div>
+          <div class="card" role="listitem">Cloud Architecture &
+            DevOps</div>
+          <div class="card" role="listitem">Data Analytics & Business
+            Intelligence</div>
+          <div class="card" role="listitem">AI/ML-Based
+            Solutions</div>
+          <div class="card" role="listitem">Technical Consulting & IT
+            Staffing</div>
+        </div>
+      </section>
+
+      <section id="clients" aria-labelledby="clients-heading">
+        <h2 id="clients-heading">Clientele & Industry Focus</h2>
+        <p>We primarily serve US-based clients with tailored tech
+          solutions across diverse industries including:</p>
+        <ul class="grid cards-2" role="list"
+          aria-label="Industries served">
+          <li>Healthcare Technology</li>
+          <li>E-commerce & Retail</li>
+          <li>Fintech</li>
+          <li>Real Estate Tech</li>
+          <li>EdTech</li>
+          <li>Logistics & Supply Chain</li>
+        </ul>
+      </section>
+
+      <section id="culture" aria-labelledby="culture-heading">
+        <h2 id="culture-heading">Team & Culture</h2>
+        <p>Skyvex is powered by a tech-savvy, agile team based in
+          Bangalore working in a hybrid model. Key cultural strengths
+          include quality-driven delivery, real-time client
+          interaction, a cutting-edge tech stack, and global project
+          exposure.</p>
+      </section>
+
+      <section id="unique" aria-labelledby="unique-heading">
+        <h2 id="unique-heading">What Makes Skyvex Unique</h2>
+        <ul class="grid cards-2" role="list"
+          aria-label="Unique qualities of Skyvex">
+          <li>Strategic leadership under Ms. Richhi Bajpai</li>
+          <li>Direct client communication from India to the US</li>
+          <li>Fast, agile development cycles</li>
+          <li>Strong focus on empowering youth and women in
+            technology</li>
+        </ul>
+      </section>
+
+      <section aria-label="Closing Thought">
+        <blockquote class="quote" tabindex="0">
+          “At Skyvex, we don’t just code. We connect, create, and
+          conquer.” – Ms. Richhi Pradeep Bajpai
+        </blockquote>
+      </section>
+    </main>
+    <footer>
+      &copy; 2025 Skyvex IT Solutions. All rights reserved. | Designed in the
+      style of ABCO Technology
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="24"
+            height="24" fill="currentColor" viewBox="0 0 24 24"><path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z" /></svg></a>
+        <a href="#" aria-label="Twitter" title="Twitter"><svg width="24"
+            height="24" fill="currentColor" viewBox="0 0 24 24"><path
+              d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482c-4.086-.205-7.713-2.164-10.141-5.144a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 0 1-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636a10.012 10.012 0 0 0 2.457-2.548z" /></svg></a>
+        <a href="#" aria-label="Facebook" title="Facebook"><svg width="24"
+            height="24" fill="currentColor" viewBox="0 0 24 24"><path
+              d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.326v21.348c0 .733.592 1.326 1.325 1.326h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.326v-21.349c0-.734-.593-1.326-1.326-1.326z" /></svg></a>
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
